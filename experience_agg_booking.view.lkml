@@ -1,13 +1,13 @@
 view: experience_agg_booking {
   sql_table_name: CDW_WAREHOUSE.EXPERIENCE_AGG_BOOKING ;;
 
-  dimension: answr_second_cnt {
-    type: number
+  measure: answr_second_cnt {
+    type: sum
     sql: ${TABLE}.ANSWR_SECOND_CNT ;;
   }
 
-  dimension: attch_outbnd_cnt {
-    type: number
+  measure: attch_outbnd_cnt {
+    type: sum
     sql: ${TABLE}.ATTCH_OUTBND_CNT ;;
   }
 
@@ -31,19 +31,19 @@ view: experience_agg_booking {
     sql: ${TABLE}.BUSINESS_PARTNR_KEY ;;
   }
 
-  dimension: call_cnt {
-    type: number
+  measure: call_cnt {
+    type: sum
     sql: ${TABLE}.CALL_CNT ;;
   }
 
-  dimension: call_id_cnt {
-    type: number
+  measure: call_id_cnt {
+    type: sum
     value_format_name: id
     sql: ${TABLE}.CALL_ID_CNT ;;
   }
 
-  dimension: callcenter_effort_second_cnt {
-    type: number
+  measure: callcenter_effort_second_cnt {
+    type: sum
     sql: ${TABLE}.CALLCENTER_EFFORT_SECOND_CNT ;;
   }
 
@@ -77,34 +77,34 @@ view: experience_agg_booking {
     sql: ${TABLE}.CUSTOMER_EFFORT_SCORE_PERCENTILE ;;
   }
 
-  dimension: customer_effort_score_rank {
-    type: number
+  measure: customer_effort_score_rank {
+    type: sum
     sql: ${TABLE}.CUSTOMER_EFFORT_SCORE_RANK ;;
   }
 
-  dimension: cvp_air_cancel_cnt {
-    type: number
+  measure: cvp_air_cancel_cnt {
+    type: sum
     sql: ${TABLE}.CVP_AIR_CANCEL_CNT ;;
   }
 
-  dimension: cvp_entry_cnt {
-    type: number
+  measure: cvp_entry_cnt {
+    type: sum
     sql: ${TABLE}.CVP_ENTRY_CNT ;;
   }
 
-  dimension: cvp_hotel_cancel_cnt {
-    type: number
+  measure: cvp_hotel_cancel_cnt {
+    type: sum
     sql: ${TABLE}.CVP_HOTEL_CANCEL_CNT ;;
   }
 
-  dimension: cvp_id_cnt {
-    type: number
+  measure: cvp_id_cnt {
+    type: sum
     value_format_name: id
     sql: ${TABLE}.CVP_ID_CNT ;;
   }
 
-  dimension: cvp_intent_cnt {
-    type: number
+  measure: cvp_intent_cnt {
+    type: sum
     sql: ${TABLE}.CVP_INTENT_CNT ;;
   }
 
@@ -113,18 +113,18 @@ view: experience_agg_booking {
     sql: ${TABLE}.CVP_RECONFIRM_CNT ;;
   }
 
-  dimension: cvp_sales_flow_cnt {
-    type: number
+  measure: cvp_sales_flow_cnt {
+    type: sum
     sql: ${TABLE}.CVP_SALES_FLOW_CNT ;;
   }
 
-  dimension: cvp_security_validation_cnt {
-    type: number
+  measure: cvp_security_validation_cnt {
+    type: sum
     sql: ${TABLE}.CVP_SECURITY_VALIDATION_CNT ;;
   }
 
-  dimension: dsat_agnt_cnt {
-    type: number
+  measure: dsat_agnt_cnt {
+    type: sum
     sql: ${TABLE}.DSAT_AGNT_CNT ;;
   }
 
@@ -158,13 +158,13 @@ view: experience_agg_booking {
     sql: ${TABLE}.EXPERIENCE_ID ;;
   }
 
-  dimension: fcr_cnt {
-    type: number
+  measure: fcr_cnt {
+    type: sum
     sql: ${TABLE}.FCR_CNT ;;
   }
 
-  dimension: fcr_val {
-    type: number
+  measure: fcr_val {
+    type: sum
     sql: ${TABLE}.FCR_VAL ;;
   }
 
@@ -173,8 +173,8 @@ view: experience_agg_booking {
     sql: ${TABLE}.FIRST_CONTACT ;;
   }
 
-  dimension: handle_cnt {
-    type: number
+  measure: handle_cnt {
+    type: sum
     sql: ${TABLE}.HANDLE_CNT ;;
   }
 
@@ -244,18 +244,18 @@ view: experience_agg_booking {
     sql: ${TABLE}.ITIN_ONLINE_OFFLN_IND_KEY ;;
   }
 
-  dimension: ivr_delay_second_cnt {
-    type: number
+  measure: ivr_delay_second_cnt {
+    type: sum
     sql: ${TABLE}.IVR_DELAY_SECOND_CNT ;;
   }
 
-  dimension: journey_second_cnt {
-    type: number
+  measure: journey_second_cnt {
+    type: sum
     sql: ${TABLE}.JOURNEY_SECOND_CNT ;;
   }
 
-  dimension: last_contact {
-    type: number
+  measure: last_contact {
+    type: sum
     sql: ${TABLE}.LAST_CONTACT ;;
   }
 
@@ -274,8 +274,8 @@ view: experience_agg_booking {
     sql: ${TABLE}.N_PRODUCTS ;;
   }
 
-  dimension: nav_cnt {
-    type: number
+  measure: nav_cnt {
+    type: sum
     sql: ${TABLE}.NAV_CNT ;;
   }
 
@@ -284,8 +284,8 @@ view: experience_agg_booking {
     sql: ${TABLE}.NAV_INTENT ;;
   }
 
-  dimension: nps_detractor_cnt {
-    type: number
+  measure: nps_detractor_cnt {
+    type: sum
     sql: ${TABLE}.NPS_DETRACTOR_CNT ;;
   }
 
@@ -294,13 +294,13 @@ view: experience_agg_booking {
     sql: ${TABLE}.NPS_DETRACTOR_VAL ;;
   }
 
-  dimension: nps_promoter_cnt {
-    type: number
+  measure: nps_promoter_cnt {
+    type: sum
     sql: ${TABLE}.NPS_PROMOTER_CNT ;;
   }
 
-  dimension: nps_promoter_val {
-    type: number
+  measure: nps_promoter_val {
+    type: sum
     sql: ${TABLE}.NPS_PROMOTER_VAL ;;
   }
 
@@ -329,18 +329,18 @@ view: experience_agg_booking {
     sql: ${TABLE}.PURCH_TRVL_ACCT_KEY ;;
   }
 
-  dimension: qualitativ_cnt {
-    type: number
+  measure: qualitativ_cnt {
+    type: sum
     sql: ${TABLE}.QUALITATIV_CNT ;;
   }
 
-  dimension: sat_agnt_cnt {
-    type: number
+  measure: sat_agnt_cnt {
+    type: sum
     sql: ${TABLE}.SAT_AGNT_CNT ;;
   }
 
-  dimension: sat_agnt_val {
-    type: number
+  measure: sat_agnt_val {
+    type: sum
     sql: ${TABLE}.SAT_AGNT_VAL ;;
   }
 
@@ -359,13 +359,13 @@ view: experience_agg_booking {
     sql: ${TABLE}.TALK_SECOND_CNT ;;
   }
 
-  dimension: totl_handle_second_cnt {
-    type: number
+  measure: totl_handle_second_cnt {
+    type: sum
     sql: ${TABLE}.TOTL_HANDLE_SECOND_CNT ;;
   }
 
-  dimension: totl_offr_cnt {
-    type: number
+  measure: totl_offr_cnt {
+    type: sum
     sql: ${TABLE}.TOTL_OFFR_CNT ;;
   }
 
@@ -375,8 +375,8 @@ view: experience_agg_booking {
     sql: ${TABLE}.TPID ;;
   }
 
-  dimension: trans_cnt {
-    type: number
+  measure: trans_cnt {
+    type: sum
     sql: ${TABLE}.TRANS_CNT ;;
   }
 
@@ -410,8 +410,8 @@ view: experience_agg_booking {
     sql: ${TABLE}.TRANS_TYP_KEY ;;
   }
 
-  dimension: transfr_queue_offr_cnt {
-    type: number
+  measure: transfr_queue_offr_cnt {
+    type: sum
     sql: ${TABLE}.TRANSFR_QUEUE_OFFR_CNT ;;
   }
 
@@ -420,13 +420,13 @@ view: experience_agg_booking {
     sql: ${TABLE}.TRIP_STAGE ;;
   }
 
-  dimension: web_effort_second_cnt {
-    type: number
+  measure: web_effort_second_cnt {
+    type: sum
     sql: ${TABLE}.WEB_EFFORT_SECOND_CNT ;;
   }
 
-  dimension: websession_cnt {
-    type: number
+  measure: websession_cnt {
+    type: sum
     sql: ${TABLE}.WEBSESSION_CNT ;;
   }
 

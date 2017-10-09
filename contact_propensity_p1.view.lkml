@@ -38,7 +38,17 @@ view: contact_propensity_p1 {
 
   measure: volume_relevant_contacts_inbnd {
     type: sum
-    sql: ${TABLE}.VOLUME_RELEVANT_CONTACTS_INBND ;;
+    drill_fields: [brand,channel_name,interaction_year,volume_relevant_contacts_inbnd]
+    sql: ${TABLE}.VOLUME_RELEVANT_CONTACTS_INBND
+    ;;
+  }
+
+
+  measure: volume_relevant_contacts_inbnd_modified {
+
+    drill_fields: [brand,channel_name,interaction_year,volume_relevant_contacts_inbnd]
+    sql: CASE WHEN ${channel_name} ='Phone' THEN  ${volume_relevant_contacts_inbnd} * 10 ELSE ${volume_relevant_contacts_inbnd} END
+      ;;
   }
 
   measure: count {
