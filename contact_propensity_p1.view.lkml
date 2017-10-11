@@ -45,7 +45,7 @@ view: contact_propensity_p1 {
 
 
   measure: volume_relevant_contacts_inbnd_modified {
-
+    group_label: "Calculated Measures"
 
     sql: CASE WHEN ${channel_name} ='Phone' THEN  ${volume_relevant_contacts_inbnd} * 5
     WHEN ${channel_name} ='Email' THEN  ${volume_relevant_contacts_inbnd} * 2
@@ -54,7 +54,7 @@ view: contact_propensity_p1 {
   }
 
   measure: volume_relevant_contacts_inbnd_modifiedop {
-
+    group_label: "Calculated Measures"
 
     sql: CASE WHEN ${channel_name} ='Phone' THEN  ${volume_relevant_contacts_inbnd} * 5
           WHEN ${channel_name} ='Email' THEN  ${volume_relevant_contacts_inbnd} * 2
