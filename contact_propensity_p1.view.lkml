@@ -4,7 +4,10 @@ label: "Contact Propensity"
   dimension: brand {
     type: string
     sql: ${TABLE}.BRAND ;;
+    html: <img src="http://www.acme.com/product_images/{{value}}}}.jpg" /> ;;
   }
+
+
 
   dimension: channel_name {
     type: string
