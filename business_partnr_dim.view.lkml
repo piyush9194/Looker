@@ -1,6 +1,6 @@
 view: business_partnr_dim {
   sql_table_name: CDW_WAREHOUSE.BUSINESS_PARTNR_DIM ;;
-
+label: "Business Partner"
   dimension: actv_business_partnr_ind {
     type: string
     sql: ${TABLE}.ACTV_BUSINESS_PARTNR_IND ;;

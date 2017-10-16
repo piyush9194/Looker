@@ -1,6 +1,6 @@
 view: contact_propensity_p1 {
   sql_table_name: CDW_WAREHOUSE.CONTACT_PROPENSITY_P1 ;;
-
+label: "Contact Propensity"
   dimension: brand {
     type: string
     sql: ${TABLE}.BRAND ;;

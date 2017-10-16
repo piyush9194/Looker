@@ -1,6 +1,6 @@
 view: mgmt_unit_dim {
   sql_table_name: CDW_WAREHOUSE.MGMT_UNIT_DIM ;;
-
+  label: "Management Unit"
   dimension: mgmt_unit_code {
     type: string
     sql: ${TABLE}.MGMT_UNIT_CODE ;;
