@@ -4,7 +4,12 @@ label: "Contact Propensity"
   dimension: brand {
     type: string
     sql: ${TABLE}.BRAND ;;
-    html: <img src="http://www.acme.com/product_images/{{value}}}}.jpg" /> ;;
+    link: {
+
+      label: "Google Search"
+      url: "http://www.google.com/search?q={{ value }}"
+      icon_url: "http://google.com/favicon.ico"
+  }
   }
 
 
