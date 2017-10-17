@@ -74,4 +74,6 @@ label: "Contact Propensity"
     type: count
     drill_fields: [channel_name]
   }
+
+
 }
