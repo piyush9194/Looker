@@ -5,7 +5,7 @@
       SELECT
   CHANNEL_NAME ,
 BRAND,
-  COALESCE(SUM(contact_propensity_p1.VOLUME_RELEVANT_CONTACTS_INBND
+  COALESCE(SUM(volume_relevant_contacts_inbnd
     ), 0) AS "volume_relevant_contacts_inbnd"
 FROM CDW_WAREHOUSE.CONTACT_PROPENSITY_P1
 
