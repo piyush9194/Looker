@@ -8,7 +8,7 @@ include: "*.dashboard"
 
 explore: business_partnr_dim {}
 
-explore: contact_propensity_by_brand {}
+explore: contact_propensity_derived_table {}
 
 explore: contact_propensity_p1 {
   join: mgmt_unit_dim {

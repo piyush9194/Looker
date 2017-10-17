@@ -14,7 +14,7 @@ label: "Contact Propensity"
 
 
 
-  dimension: channel_name {
+  dimension: Channel {
     type: string
     sql: ${TABLE}.CHANNEL_NAME ;;
   }
@@ -46,7 +46,7 @@ label: "Contact Propensity"
 
   measure: volume_relevant_contacts_inbnd {
     type: sum
-    drill_fields: [brand,channel_name,interaction_year,volume_relevant_contacts_inbnd]
+    drill_fields: [brand,Channel,interaction_year,volume_relevant_contacts_inbnd]
     sql: ${TABLE}.VOLUME_RELEVANT_CONTACTS_INBND
     ;;
   }
@@ -55,8 +55,8 @@ label: "Contact Propensity"
   measure: volume_relevant_contacts_inbnd_modified {
     group_label: "Calculated Measures"
 
-    sql: CASE WHEN ${channel_name} ='Phone' THEN  ${volume_relevant_contacts_inbnd} * 5
-    WHEN ${channel_name} ='Email' THEN  ${volume_relevant_contacts_inbnd} * 2
+    sql: CASE WHEN ${Channel} ='Phone' THEN  ${volume_relevant_contacts_inbnd} * 5
+    WHEN ${Channel} ='Email' THEN  ${volume_relevant_contacts_inbnd} * 2
     ELSE ${volume_relevant_contacts_inbnd} * 3 END
       ;;
   }
@@ -64,15 +64,15 @@ label: "Contact Propensity"
   measure: volume_relevant_contacts_inbnd_modifiedop {
     group_label: "Calculated Measures"
 
-    sql: CASE WHEN ${channel_name} ='Phone' THEN  ${volume_relevant_contacts_inbnd} * 5
-          WHEN ${channel_name} ='Email' THEN  ${volume_relevant_contacts_inbnd} * 2
+    sql: CASE WHEN ${Channel} ='Phone' THEN  ${volume_relevant_contacts_inbnd} * 5
+          WHEN ${Channel} ='Email' THEN  ${volume_relevant_contacts_inbnd} * 2
           ELSE ${volume_relevant_contacts_inbnd} * 3 END
             ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [channel_name]
+    drill_fields: [Channel]
   }
 
 

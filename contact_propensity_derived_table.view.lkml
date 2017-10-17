@@ -1,19 +1,30 @@
-view: contact_propensity_by_brand {
 
-  derived_table: {
-    sql: SELECT
-        contact_propensity_p1.BRAND  AS "brand",
-        COUNT(*) AS "count"
-      FROM CDW_WAREHOUSE.CONTACT_PROPENSITY_P1  AS contact_propensity_p1
+  view: contact_propensity_derived_table{
+    derived_table: {
+      sql:
+      SELECT
+  CHANNEL_NAME ,
+BRAND,
+  COALESCE(SUM(contact_propensity_p1.VOLUME_RELEVANT_CONTACTS_INBND
+    ), 0) AS "volume_relevant_contacts_inbnd"
+FROM CDW_WAREHOUSE.CONTACT_PROPENSITY_P1
 
-      WHERE
-        contact_propensity_p1.BRAND = 'COMET'
-      GROUP BY 1;;
-      }
+GROUP BY  CHANNEL_NAME ,BRAND;;
+    }
+
+    dimension: Channel {
+      type: string
+      sql: ${TABLE}.CHANNEL_NAME ;;
+    }
 
     dimension: brand {
       type: string
       sql: ${TABLE}.BRAND ;;}
+
+    dimension: volume_relevant_contacts_inbnd {
+      type: number
+      sql: ${TABLE}.volume_relevant_contacts_inbnd ;;}
+
 
 
 
@@ -48,7 +59,7 @@ view: contact_propensity_by_brand {
   # }
 }
 
-# view: new {
+# view: contact_propensity_derived_table {
 #   # Or, you could make this view a derived table, like this:
 #   derived_table: {
 #     sql: SELECT
