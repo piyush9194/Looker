@@ -2,15 +2,18 @@ view: contact_propensity_by_brand {
 
   derived_table: {
     sql: SELECT
-        contact_propensity_p1.BRAND  AS "contact_propensity_p1.brand",
-        COUNT(*) AS "contact_propensity_p1.count"
+        contact_propensity_p1.BRAND  AS "brand",
+        COUNT(*) AS "count"
       FROM CDW_WAREHOUSE.CONTACT_PROPENSITY_P1  AS contact_propensity_p1
 
       WHERE
         contact_propensity_p1.BRAND = 'COMET'
       GROUP BY 1;;
-  }
+      }
 
+    dimension: brand {
+      type: string
+      sql: ${TABLE}.BRAND ;;}
 
 
 
