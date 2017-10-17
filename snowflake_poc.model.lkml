@@ -6,19 +6,26 @@ include: "*.view"
 # include all the dashboards
 include: "*.dashboard"
 
+datagroup: interaction_date_datagroup {
+  sql_trigger: SELECT max(interaction date) FROM contact_propensity_p1 ;;
+  max_cache_age: "24 hours"
+}
+
 explore: business_partnr_dim {}
 
 explore: contact_propensity_derived_table {}
 
 explore: contact_propensity_p1 {
+  persist_with: interaction_date_datagroup
   join: mgmt_unit_dim {
 
     type: left_outer
     relationship: many_to_one
-    sql_on: ${mgmt_unit_dim.mgmt_unit_key} = ${contact_propensity_p1.mgmt_unit_key} ;;
+    sql_on: ${mgmt_unit_dim.mgmt_unit_key} = ${contact_propensity_p1.mgmt_unit_key}
+
+    ;;
   }
 }
-
 
 explore: cp_nav_email_detail {}
 
