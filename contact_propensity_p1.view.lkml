@@ -3,7 +3,7 @@ view: contact_propensity_p1 {
 label: "Contact Propensity"
   dimension: brand {
     type: string
-    sql: ${TABLE}.BRAND ;;
+    sql: ${TABLE}.brand ;;
     link: {
 
       label: "Google Search"
@@ -16,7 +16,7 @@ label: "Contact Propensity"
 
   dimension: Channel {
     type: string
-    sql: ${TABLE}.CHANNEL_NAME ;;
+    sql: ${TABLE}.channel_name ;;
   }
 
   dimension_group: interaction {
@@ -47,7 +47,7 @@ label: "Contact Propensity"
   measure: volume_relevant_contacts_inbnd {
     type: sum
     drill_fields: [brand,Channel,interaction_year,volume_relevant_contacts_inbnd]
-    sql: ${TABLE}.VOLUME_RELEVANT_CONTACTS_INBND
+    sql: ${TABLE}.volume_relevant_contacts_inbnd
     ;;
   }
 
